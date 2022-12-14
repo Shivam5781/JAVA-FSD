@@ -36,6 +36,7 @@ public class EmployeeBatchConfig {
     public FlatFileItemReader<Employee> reader() {
         FlatFileItemReader<Employee> reader=new FlatFileItemReader<Employee>();
         reader.setResource(new FileSystemResource("C:\\csv\\Employee.csv"));
+        System.out.println("Hello world master");
         reader.setLineMapper(new DefaultLineMapper<Employee>(){{
             setLineTokenizer(new DelimitedLineTokenizer(){{
                 setNames(new String[]{"id","name","age","address"});
